@@ -6,12 +6,16 @@ import {
   FileText, 
   Globe, 
   Home, 
+  LogOut,
   Network, 
   Search, 
   ShieldAlert, 
   Users 
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
+import { Button } from "@/components/ui/button";
 
 interface SidebarProps {
   className?: string;
@@ -27,6 +31,16 @@ interface NavItem {
 const Sidebar = ({ className }: SidebarProps) => {
   // Get the current path to determine which nav item is active
   const currentPath = window.location.pathname;
+  const { logout } = useAuth();
+  const { toast } = useToast();
+
+  const handleLogout = () => {
+    logout();
+    toast({
+      title: "Logged out",
+      description: "You have been successfully logged out",
+    });
+  };
 
   const navItems: NavItem[] = [
     { icon: Home, label: "Dashboard", href: "/", active: currentPath === "/" },
@@ -68,7 +82,7 @@ const Sidebar = ({ className }: SidebarProps) => {
       </nav>
       
       <div className="p-4 border-t border-gray-200">
-        <div className="flex items-center">
+        <div className="flex items-center mb-4">
           <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
             <span className="text-primary font-semibold">LE</span>
           </div>
@@ -77,6 +91,16 @@ const Sidebar = ({ className }: SidebarProps) => {
             <p className="text-xs text-gray-500">Advanced User</p>
           </div>
         </div>
+        
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="w-full flex justify-between items-center" 
+          onClick={handleLogout}
+        >
+          <span>Logout</span>
+          <LogOut className="h-4 w-4" />
+        </Button>
       </div>
     </div>
   );
