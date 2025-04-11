@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import StatCard from "@/components/dashboard/StatCard";
@@ -20,7 +19,7 @@ const mockNetworkContacts = [
   { id: '3', name: 'Mike Wilson', connections: 15, risk: 'medium' },
   { id: '4', name: 'Lisa Chen', connections: 12, risk: 'low' },
   { id: '5', name: 'Omar Ali', connections: 9, risk: 'high' },
-] as const;
+];
 
 const mockFinancialSources = [
   { name: 'Foreign Funding', amount: 250000, percentage: 50 },
@@ -64,7 +63,7 @@ const mockTimelineEvents = [
     description: 'One-way flight, no return recorded.',
     category: 'travel' 
   },
-] as const;
+];
 
 const mockDocuments = [
   { id: '1', name: 'Passport', status: 'verified', date: '2023-01-10' },
@@ -73,7 +72,7 @@ const mockDocuments = [
   { id: '4', name: 'Bank Statements', status: 'pending', date: '2023-04-05' },
   { id: '5', name: 'Property Deed', status: 'pending', date: '2023-04-22' },
   { id: '6', name: 'Travel Visa', status: 'flagged', notes: 'Potentially forged', date: '2023-05-18' },
-] as const;
+];
 
 const mockBehavioralTraits = [
   {
