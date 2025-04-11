@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for the application
+				"risk-low": "#4CAF50",
+				"risk-medium": "#FF9800",
+				"risk-high": "#F44336",
+				"chart-blue": "#1E88E5",
+				"chart-indigo": "#3949AB",
+				"chart-purple": "#8E24AA",
+				"chart-teal": "#00897B",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +93,16 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-subtle': {
+					'0%, 100%': { opacity: 1 },
+					'50%': { opacity: 0.8 }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite'
 			}
 		}
 	},
