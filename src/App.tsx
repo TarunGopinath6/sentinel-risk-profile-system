@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Index from "./pages/Index";
 import DataSources from "./pages/DataSources";
+import DataView from "./pages/DataView";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
@@ -43,6 +44,14 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <DataSources />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/data-view" 
+        element={
+          <ProtectedRoute>
+            <DataView />
           </ProtectedRoute>
         } 
       />

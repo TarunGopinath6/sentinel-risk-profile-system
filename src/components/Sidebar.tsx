@@ -10,7 +10,8 @@ import {
   Network, 
   Search, 
   ShieldAlert, 
-  Users 
+  Users,
+  Table
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -45,6 +46,7 @@ const Sidebar = ({ className }: SidebarProps) => {
   const navItems: NavItem[] = [
     { icon: Home, label: "Dashboard", href: "/", active: currentPath === "/" },
     { icon: Database, label: "Data Sources", href: "/data-sources", active: currentPath === "/data-sources" },
+    { icon: Table, label: "Data View", href: "/data-view", active: currentPath === "/data-view" },
     { icon: Users, label: "Suspect Profiles", href: "/profiles", active: currentPath === "/profiles" },
     { icon: Network, label: "Network Analysis", href: "/network", active: currentPath === "/network" },
     { icon: Globe, label: "Geospatial", href: "/geospatial", active: currentPath === "/geospatial" },
