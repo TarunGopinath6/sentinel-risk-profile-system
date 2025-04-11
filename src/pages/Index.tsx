@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import StatCard from "@/components/dashboard/StatCard";
@@ -11,9 +12,10 @@ import ActivityTimeline from "@/components/dashboard/ActivityTimeline";
 import DocumentVerification from "@/components/dashboard/DocumentVerification";
 import BehavioralPatterns from "@/components/dashboard/BehavioralPatterns";
 import { AlertTriangle, ArrowUpRight, DollarSign, Network, User, Users } from "lucide-react";
+import { NetworkContact, FinancialSource, TimelineEvent, Document, BehavioralCategory } from "@/types/dashboard";
 
 // Sample data for demo purposes
-const mockNetworkContacts = [
+const mockNetworkContacts: NetworkContact[] = [
   { id: '1', name: 'John Ahmed', connections: 24, risk: 'high' },
   { id: '2', name: 'Sara Khan', connections: 18, risk: 'medium' },
   { id: '3', name: 'Mike Wilson', connections: 15, risk: 'medium' },
@@ -21,14 +23,14 @@ const mockNetworkContacts = [
   { id: '5', name: 'Omar Ali', connections: 9, risk: 'high' },
 ];
 
-const mockFinancialSources = [
+const mockFinancialSources: FinancialSource[] = [
   { name: 'Foreign Funding', amount: 250000, percentage: 50 },
   { name: 'Cryptocurrency', amount: 150000, percentage: 30 },
   { name: 'Local Operations', amount: 75000, percentage: 15 },
   { name: 'Unknown', amount: 25000, percentage: 5 },
 ];
 
-const mockTimelineEvents = [
+const mockTimelineEvents: TimelineEvent[] = [
   { 
     id: '1', 
     date: '2023-01-15', 
@@ -65,7 +67,7 @@ const mockTimelineEvents = [
   },
 ];
 
-const mockDocuments = [
+const mockDocuments: Document[] = [
   { id: '1', name: 'Passport', status: 'verified', date: '2023-01-10' },
   { id: '2', name: 'Driver\'s License', status: 'verified', date: '2023-02-15' },
   { id: '3', name: 'National ID', status: 'flagged', notes: 'Inconsistent information', date: '2023-03-20' },
@@ -74,7 +76,7 @@ const mockDocuments = [
   { id: '6', name: 'Travel Visa', status: 'flagged', notes: 'Potentially forged', date: '2023-05-18' },
 ];
 
-const mockBehavioralTraits = [
+const mockBehavioralTraits: BehavioralCategory[] = [
   {
     category: 'Radicalization Indicators',
     traits: [

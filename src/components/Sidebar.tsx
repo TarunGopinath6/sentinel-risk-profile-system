@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { 
   Activity, 
+  Database,
   FileText, 
   Globe, 
   Home, 
@@ -24,15 +25,19 @@ interface NavItem {
 }
 
 const Sidebar = ({ className }: SidebarProps) => {
+  // Get the current path to determine which nav item is active
+  const currentPath = window.location.pathname;
+
   const navItems: NavItem[] = [
-    { icon: Home, label: "Dashboard", href: "/", active: true },
-    { icon: Users, label: "Suspect Profiles", href: "/profiles" },
-    { icon: Network, label: "Network Analysis", href: "/network" },
-    { icon: Globe, label: "Geospatial", href: "/geospatial" },
-    { icon: Activity, label: "Temporal Analysis", href: "/temporal" },
-    { icon: ShieldAlert, label: "Risk Assessment", href: "/risk" },
-    { icon: FileText, label: "Documentation", href: "/docs" },
-    { icon: Search, label: "Advanced Search", href: "/search" },
+    { icon: Home, label: "Dashboard", href: "/", active: currentPath === "/" },
+    { icon: Database, label: "Data Sources", href: "/data-sources", active: currentPath === "/data-sources" },
+    { icon: Users, label: "Suspect Profiles", href: "/profiles", active: currentPath === "/profiles" },
+    { icon: Network, label: "Network Analysis", href: "/network", active: currentPath === "/network" },
+    { icon: Globe, label: "Geospatial", href: "/geospatial", active: currentPath === "/geospatial" },
+    { icon: Activity, label: "Temporal Analysis", href: "/temporal", active: currentPath === "/temporal" },
+    { icon: ShieldAlert, label: "Risk Assessment", href: "/risk", active: currentPath === "/risk" },
+    { icon: FileText, label: "Documentation", href: "/docs", active: currentPath === "/docs" },
+    { icon: Search, label: "Advanced Search", href: "/search", active: currentPath === "/search" },
   ];
 
   return (
